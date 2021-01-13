@@ -51,7 +51,7 @@ class SwishMe(nn.Module):
         super(SwishMe, self).__init__()
 
     def forward(self, x):
-        return SwishJitAutoFn.apply(x)
+        return x * torch.sigmoid(x)#SwishJitAutoFn.apply(x)
 
 
 @torch.jit.script
